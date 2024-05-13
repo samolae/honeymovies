@@ -1,0 +1,17 @@
+@mixin d-flex($display, $justify, $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin button {
+    background-color: $yellow;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 40px;
+    font-size: $h5;
+    font-weight: 500;
+    color: $white;
+    cursor: pointer;
+    font-family: $montserrat;
+}

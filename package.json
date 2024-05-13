@@ -1,0 +1,20 @@
+{
+  "name": "honeymovies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch ./scss/global.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samolae/honeymovies.git"
+  },
+  "author": "Salome M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samolae/honeymovies/issues"
+  },
+  "homepage": "https://github.com/samolae/honeymovies#readme"
+}

@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honey Movies</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/image/logo.svg" alt=""></a>
+        </div>
+
+        <div class="header-menu">
+            <div class="navbar">
+                <ul>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Anime</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <img src="/image/icons/Search....svg" alt="">
+                <input type="search" id="site-search" name="search" placeholder="Search"/>
+                <img src="/image/icons/Filter.svg" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="sidebar">
+                <div>
+                    <p>Menu</p>
+                    <ul>
+                        <li class="list-item active"><a href="#"><img src="/image/icons/Icon.svg" alt=""> Home</a></li>
+                        <li  class="list-item" ><a href="#"><img src="/image/icons/Discover.svg" alt=""> Discover</a></li>
+                        <li  class="list-item" ><a href="#"><img src="/image/icons/Award.svg" alt=""> Awards</a></li>
+                        <li  class="list-item" ><a href="#"><img src="/image/icons/Celebrities.svg" alt=""> Celebrities</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p>Library</p>
+                    <ul>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Recent.svg" alt=""> Recent</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Top Rated.svg" alt=""> Top Rated</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Downloaded.svg" alt=""> Downloaded</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Playlists.svg" alt=""> Playlist</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Watchlist.svg" alt=""> Watchlist</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Completed.svg" alt=""> Completed</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p>General</p>
+                    <ul>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Settings.svg" alt=""> Settings</a></li>
+                        <li class="list-item"><a href="#"><img src="/image/icons/Log Out.svg" alt=""> Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="image-container">
+                    <img src="/image/header-photo.png" alt="">
+                </div>
+                <div class="movies">
+                    <h4>Movies</h4>
+                    <div>
+                        <div class="movie-image">
+                            <img src="/image/loki.png" alt="loki">
+                            <div class="overlay overlay-1"></div>
+                            <div class="overlay overlay-2"></div>
+                        </div> 
+                        <div class="movie-image">
+                            <img src="/image/chernobyl.png" alt="loki">
+                            <div class="overlay overlay-1"></div>
+                            <div class="overlay overlay-2"></div>
+                        </div> 
+                        <div class="movie-image">
+                            <img src="/image/rick and moerty.png" alt="loki">
+                            <div class="overlay overlay-1"></div>
+                            <div class="overlay overlay-2"></div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </section>
+    </main>
 
     <script src="/script.js"></script>
 </body>
