@@ -1,12 +1,15 @@
-  // @include d-flex(flex, space-between, center);
+// @include d-flex(flex, space-between, center);
 body {
   background-color: $black;
   font-family: "Lato", sans-serif;
+  
 }
 
 header {
   @include d-flex(flex, space-between, center);
   width: 80%;
+  max-width: 1220px;
+
   margin: 64px auto;
   .logo {
     height: 64px;
@@ -27,11 +30,11 @@ header {
         a {
           cursor: pointer;
         }
-      }    
+      }
       li:nth-child(1) {
-      color: $yellow;
-      border-bottom: 3px solid $yellow;
-    }
+        color: $yellow;
+        border-bottom: 3px solid $yellow;
+      }
     }
     div {
       position: relative;
@@ -56,14 +59,14 @@ header {
           /* Hide the button with display: none; */
           display: none;
         }
-        
       }
       #movie-container {
         position: absolute;
         right: 0px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 60vw;
+        grid-template-columns: repeat(2, 1fr);
+        width: 50vw;
+        max-width: 600px;
         overflow: hidden;
         z-index: 9;
         gap: 8px;
@@ -107,68 +110,67 @@ header {
 }
 
 main {
-  width: 80%;
+  width: 80%; 
+  max-width: 1220px;
   margin: 36px auto;
   section {
     @include d-flex(flex, space-between, center);
     .sidebar {
       div {
-        &:nth-child(2){
+        &:nth-child(2) {
           margin: 60px 0;
         }
         p {
-        color: $white;
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 16px;
-        opacity: 67%;
-      }
-  
-      .list-item {
-        &.active {
-          border-right: 2px solid $yellow;
-          filter: brightness(0) saturate(100%) invert(84%) sepia(50%) saturate(2806%) hue-rotate(344deg) brightness(98%) contrast(98%);
-      }
-      
-        max-width: 196px;
-        height: 42px;
-        padding: 9px 0;
-        margin-bottom: 8px;
-        cursor: pointer;
-        a {
-          @include d-flex(flex, flex-start, center);
-          gap: 16px;
           color: $white;
           font-size: 18px;
-          font-weight: 500;
+          font-weight: 700;
+          margin-bottom: 16px;
+          opacity: 67%;
+        }
+
+        .list-item {
+          &.active {
+            border-right: 2px solid $yellow;
+            filter: brightness(0) saturate(100%) invert(84%) sepia(50%)
+              saturate(2806%) hue-rotate(344deg) brightness(98%) contrast(98%);
+          }
+
+          max-width: 196px;
+          height: 42px;
+          padding: 9px 0;
+          margin-bottom: 8px;
+          cursor: pointer;
+          a {
+            @include d-flex(flex, flex-start, center);
+            gap: 16px;
+            color: $white;
+            font-size: 18px;
+            font-weight: 500;
+          }
         }
       }
-      
-  
-      }
-    
     }
-  
+
     .right-column {
       position: relative;
       display: inline-block;
       .image-container {
-          position: relative;
-          margin-bottom: 60px;
-  
-          &::after {
-              content: "";
-              border-radius: 20px;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background-color: rgba(22, 24, 30, 0.5); // #16181E 50% 
-          }
-          img {
-            width: 100%;
-          }
+        position: relative;
+        margin-bottom: 60px;
+
+        &::after {
+          content: "";
+          border-radius: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(22, 24, 30, 0.5); // #16181E 50%
+        }
+        img {
+          width: 100%;
+        }
       }
 
       .movies {
@@ -190,37 +192,108 @@ main {
               width: 100%;
               height: auto;
               border-radius: 20px;
-
             }
-            
+
             .overlay {
               position: absolute;
               top: 0;
               left: 0;
               width: 100%;
               height: 100%;
-              
+
               &.overlay-1 {
-                background-color: #16181E;
+                background-color: #16181e;
                 opacity: 0.4;
                 border-radius: 20px;
-
               }
-              
+
               &.overlay-2 {
-                background: linear-gradient(rgba(22, 24, 30, 0) 0%, rgba(22, 24, 30, 0.7) 67%);
+                background: linear-gradient(
+                  rgba(22, 24, 30, 0) 0%,
+                  rgba(22, 24, 30, 0.7) 67%
+                );
                 opacity: 0.7;
                 border-radius: 20px;
               }
             }
-            
           }
         }
-
-        
       }
-  }
-  
+    }
   }
 }
+
+// movie-details-body Tab
+.movie-details-body {
+  position: relative;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.67);
+    z-index: -1;
+  }
+  div {
+    width: 80%;
+    max-width: 1220px;
+    margin: 96px auto;
+    #movie-details {
+      color: $white;
+      @include d-flex(flex, space-between, center);
+      .info {
+        display: flex;
+        flex-direction: column;
+            h3 {
+        font-size: 68px;
+        font-weight: 900;
+        color: $white;
+        margin-bottom: 36px;
+      }
+      .stars-container {
+        .star {
+          display: inline-block;
+          width: 38px;
+          height: 38px;
+          background-color: $gray;
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        
+        .star.full {
+          background-color: $yellow;
+        }
+        
+        .star.half {
+          background: linear-gradient(to right, #F8B319 50%, #fff 50%);
+        }
+      }
+      span {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 27px;
+      }
+      a {
+        cursor: pointer;
+        img {
+          height: 30px;
+        }
+      }
+      p {
+        margin: 26px 0;
+        font-size: 30px;
+        max-width: 652px;
+        font-weight: 600;
+      }
+      }
+  
+  
+    }
+  }
+}
+
+
 

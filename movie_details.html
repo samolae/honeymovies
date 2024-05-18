@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <p><span>x</span>Back Home</p>
-    <div id="movie-details">
-        <!-- <div class="info">
-            <h3>Title</h3>
-            <div>rating</div>
-            <span>views</span>
-            <a href="">imdb logo da link</a>
-            <p>description</p>
-            <div>
-                <button class="second-btn">Watchlist</button>
-                <button class="second-btn">Watch Now</button>
+<body id="movie-details-body" class="movie-details-body">
+    <div>
+        <p><span>x</span> Back Home</p>
+        <div id="movie-details">
+            <div class="info">
+                <h3 id="title"></h3>
+                <div class="stars-container" id="stars-container"></div>
+                <span id="genre"></span>
+                <a href="" id="imdb_link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" alt=""></a>
+                <p id="description"></p>
+                <div>
+                    <button class="second-btn">Watchlist</button>
+                    <button class="second-btn">Watch Now</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="" alt="" id="image-container-img">
             </div>
         </div>
-        <div class="image-container"> 
-            <img src=" url(${movieFullData.Poster}" alt="">
-        </div> -->
     </div>
-    <script src="./script.js"></script>
+    <script src="./details.js"></script>
 </body>
 </html>

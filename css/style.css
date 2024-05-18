@@ -122,6 +122,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 80%;
+  max-width: 1220px;
   margin: 64px auto;
 }
 header .logo {
@@ -185,8 +186,9 @@ header .header-menu div #movie-container {
   position: absolute;
   right: 0px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 60vw;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50vw;
+  max-width: 600px;
   overflow: hidden;
   z-index: 9;
   gap: 8px;
@@ -230,6 +232,7 @@ header .header-menu div #movie-container .movie .movie-info p {
 
 main {
   width: 80%;
+  max-width: 1220px;
   margin: 36px auto;
 }
 main section {
@@ -319,7 +322,7 @@ main section .right-column .movies div .movie-image .overlay {
   height: 100%;
 }
 main section .right-column .movies div .movie-image .overlay.overlay-1 {
-  background-color: #16181E;
+  background-color: #16181e;
   opacity: 0.4;
   border-radius: 20px;
 }
@@ -327,6 +330,72 @@ main section .right-column .movies div .movie-image .overlay.overlay-2 {
   background: linear-gradient(rgba(22, 24, 30, 0) 0%, rgba(22, 24, 30, 0.7) 67%);
   opacity: 0.7;
   border-radius: 20px;
+}
+
+.movie-details-body {
+  position: relative;
+  z-index: 0;
+}
+.movie-details-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.67);
+  z-index: -1;
+}
+.movie-details-body div {
+  width: 80%;
+  max-width: 1220px;
+  margin: 96px auto;
+}
+.movie-details-body div #movie-details {
+  color: #F9F9F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movie-details-body div #movie-details .info {
+  display: flex;
+  flex-direction: column;
+}
+.movie-details-body div #movie-details .info h3 {
+  font-size: 68px;
+  font-weight: 900;
+  color: #F9F9F9;
+  margin-bottom: 36px;
+}
+.movie-details-body div #movie-details .info .stars-container .star {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background-color: #21242D;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.movie-details-body div #movie-details .info .stars-container .star.full {
+  background-color: #F8B319;
+}
+.movie-details-body div #movie-details .info .stars-container .star.half {
+  background: linear-gradient(to right, #F8B319 50%, #fff 50%);
+}
+.movie-details-body div #movie-details .info span {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 27px;
+}
+.movie-details-body div #movie-details .info a {
+  cursor: pointer;
+}
+.movie-details-body div #movie-details .info a img {
+  height: 30px;
+}
+.movie-details-body div #movie-details .info p {
+  margin: 26px 0;
+  font-size: 30px;
+  max-width: 652px;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */
