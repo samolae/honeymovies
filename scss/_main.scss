@@ -61,17 +61,18 @@ header {
       #movie-container {
         position: absolute;
         right: 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 60vw;
         overflow: hidden;
-        display: flex;
-        flex-direction: column;
         z-index: 9;
         gap: 8px;
-        padding: 16px 0;
-        border-radius: 12px;
-        overflow: hidden;
+        margin: 16px 0;
         .movie {
-          @include d-flex(flex, flex-start, center);
-          height: 72px;
+          @include d-flex(flex, flex-start, space-between);
+          border-radius: 12px;
+          overflow: hidden;
+          height: 96px;
           cursor: pointer;
           background-color: $black;
           transition: all 0.4s ease-in-out;
@@ -83,11 +84,10 @@ header {
             height: 100%;
           }
           .movie-info {
-            padding: 4px 16px;
-            max-height: 100%;
+            padding: 8px 16px;
             overflow: hidden;
             h3 {
-              font-size: 18px;
+              font-size: 16px;
               font-weight: 600;
               margin-bottom: 4px;
               color: $white;
