@@ -2,7 +2,7 @@ const fetchMovieDetails = async (imdbID) => {
     const apiKey = "e828ad33";
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`
+        `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`
       );
       const movieFullData = await response.json();
       if (movieFullData.Response === "True") {
@@ -35,7 +35,7 @@ const fetchMovieDetails = async (imdbID) => {
     // Assignments using destructured values (no ternary needed):
     titleElement.textContent = Title;
     genreElement.textContent = Genre;
-    imdbLinkElement.href = `http://www.imdb.com/title/${imdbID}/`;
+    imdbLinkElement.href = `https://www.imdb.com/title/${imdbID}/`;
     descriptionElement.textContent = Plot;
     image.src = Poster;
     image.alt = Title;

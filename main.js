@@ -41,8 +41,12 @@ const createMovieDiv = (movie) => {
 const fetchMovieBySearch = async (query) => {
   try {
     const response = await fetch(
-      `http://www.omdbapi.com/?s=${query}&apikey=${apiKey}`
+      `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`
     );
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
     const searchData = await response.json();
 
     if (searchData.Response === "True") {
