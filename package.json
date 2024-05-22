@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/samolae/honeymovies/issues"
   },
-  "homepage": "https://github.com/samolae/honeymovies#readme"
+  "homepage": "https://github.com/samolae/honeymovies#readme",
+  "dependencies": {
+    "swiper": "^11.1.3"
+  }
 }

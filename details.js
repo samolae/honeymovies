@@ -1,8 +1,10 @@
+const apiKey = "e828ad33";
+const BASE_URL = "https://www.omdbapi.com";
+
 const fetchMovieDetails = async (imdbID) => {
-    const apiKey = "e828ad33";
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`
+        `${BASE_URL}?i=${imdbID}&apikey=${apiKey}`
       );
       const movieFullData = await response.json();
       if (movieFullData.Response === "True") {
@@ -17,7 +19,10 @@ const fetchMovieDetails = async (imdbID) => {
   
   const displayMovieDetails = (movieFullData) => {
     const detailsBody = document.getElementById('movie-details-body');
-    detailsBody.style.background =`url('${movieFullData.Poster}')`;
+    detailsBody.style.backgroundImage =`
+    linear-gradient(rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.67)),
+    url('${movieFullData.Poster}')
+`;
     detailsBody.style.backgroundSize = "cover";
     detailsBody.style.backgroundRepeat = "no-repeat";
     detailsBody.style.backgroundPosition = "center";
@@ -50,7 +55,7 @@ const fetchMovieDetails = async (imdbID) => {
     const fullStars = Math.floor(rating / 2);
     const halfStar = (rating % 2) >= 1 ? 1 : 0;
     const totalStars = 5;
-  
+
     for (let i = 0; i < totalStars; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
@@ -61,6 +66,7 @@ const fetchMovieDetails = async (imdbID) => {
       }
       starsContainer.appendChild(star);
     }
+
   };
   
   // Get the IMDb ID from the URL

@@ -23,6 +23,8 @@ const movieContainer = document.getElementById("movie-container");
 
 // API key
 const apiKey = "e828ad33";
+const BASE_URL = 'https://www.omdbapi.com/';
+
 
 //  movie container after searching
 const createMovieDiv = (movie) => {
@@ -41,7 +43,7 @@ const createMovieDiv = (movie) => {
 const fetchMovieBySearch = async (query) => {
   try {
     const response = await fetch(
-      `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`
+      `${BASE_URL}?s=${query}&apikey=${apiKey}`
     );
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -87,3 +89,92 @@ const openOrFocusDetailsTab = (imdbID) => {
     detailsTab = window.open(`movie_details.html?imdbID=${imdbID}`, "_blank");
   }
 };
+
+
+
+// 
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  },
+});
+
+
+
+
+// swiper
+
+const getTopRatedMovies = async (page) => {
+  try {
+    const response = await fetch(`${BASE_URL}?apikey=${apiKey}&s=series&page=${page}`);
+    const data = await response.json();
+
+    if (!data.Search) {
+      console.log("No results found for the provided search criteria.");
+      return;
+    }
+
+    const detailedMovies = await Promise.all(
+      data.Search.map(async (movie) => {
+        const movieDetailsResponse = await fetch(`${BASE_URL}?apikey=${apiKey}&i=${movie.imdbID}`);
+        const movieDetails = await movieDetailsResponse.json();
+        return { ...movie, ...movieDetails };
+      })
+    );
+
+    console.log(detailedMovies);
+    createCard(detailedMovies);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+
+const createCard = (data) => {
+  const swiperWrapper = document.getElementById("swiper-wrapper");
+
+  data.forEach((item) => {
+    const slide = document.createElement("div");
+    slide.classList.add("swiper-slide");
+    slide.style.backgroundImage = `url(${item.Poster})`;
+
+    slide.innerHTML = `
+      <div class="card">
+        <span class="rating">${item.imdbRating}</span>
+        <div>
+          <h4>${item.Title}</h4>
+          <div class="container-stars"></div>
+          <p>${item.Released}</p>
+          <p>${item.Plot}</p>
+        </div>
+      </div>
+    `;
+    swiperWrapper.appendChild(slide);
+    slide.addEventListener("click", () => {
+      openOrFocusDetailsTab(item.imdbID);
+    });
+  });
+
+  swiper.update();
+};
+
+getTopRatedMovies(1);
+
+
+

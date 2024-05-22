@@ -4,14 +4,14 @@
     align-items: $align;
 }
 
-@mixin button {
-    background-color: $yellow;
-    border-radius: 10px;
+@mixin button ($background-color, $color){
+    background-color: $background-color;
+    border-radius: 15px;
     border: none;
-    padding: 15px 40px;
-    font-size: $h5;
-    font-weight: 500;
-    color: $white;
+    padding: 19px 47px;
+    font-size: 22px;
+    font-weight: 900;
+    color: $color;
     cursor: pointer;
-    font-family: $montserrat;
+    height: 71px;
 }

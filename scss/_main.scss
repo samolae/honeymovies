@@ -216,6 +216,74 @@ main {
                 border-radius: 20px;
               }
             }
+            .top-info {
+              position: absolute;
+              top: 21px;
+              left: 21px;
+              @include d-flex(flex, flex-end, flex-start);
+              flex-direction: column;
+              gap: 14px;
+              color:white;
+              h5 {
+                font-size: 24px;
+                font-weight: 900;
+              }
+              div {
+                @include d-flex(flex, flex-end, flex-start);
+                gap: 6px;
+                .star {
+                  height: 15px;
+                  width: 15px;
+                }
+              }
+              .stars {
+                color:white;
+              }
+            }
+            .bottom-info {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              right: 10px;
+              @include d-flex(flex, flex-end, center);
+              gap: 14px;
+              flex-direction: column;
+              div {
+                @include d-flex(flex, space-between, space-between);
+                width: 100%;
+                gap:10px;
+                span {
+                  font-size: 16px;
+                  color: #F9F9F9;
+                  font-weight: 600;
+                  opacity: 70%;
+                }
+                button {
+                  cursor: pointer;
+                  background-color: #f9f9f920;
+                  color: $white;
+                  border: none;
+                  border-radius: 15px;
+                  padding: 0 16px;
+                  height: 50px;
+                  font-size: 24px;
+                  text-wrap: nowrap;
+                  font-weight: 600;
+                  &:nth-child(2) {
+                    background-color: $yellow;
+                    color: $black;
+                    font-size: 18px;
+                    width: 100%;
+                  }
+                  transition: all 0.4s ease-in-out;
+                  &:hover {
+                    background-color: $gray;
+                    border-radius: 12px;
+                    color: $white;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -225,25 +293,25 @@ main {
 
 // movie-details-body Tab
 .movie-details-body {
-  position: relative;
-  z-index: 0;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    background: rgba(0, 0, 0, 0.67);
-    z-index: -1;
-  }
-  div {
+  height: 100vh;
+  overflow: hidden;
+  .container {
     width: 80%;
     max-width: 1220px;
     margin: 96px auto;
+    .back {
+      background-color: #f9f9f920;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: $black;
+      }
+    }
     #movie-details {
       color: $white;
-      @include d-flex(flex, space-between, center);
+      @include d-flex(flex, space-between, flex-end);
       .info {
         display: flex;
         flex-direction: column;
@@ -253,28 +321,11 @@ main {
         color: $white;
         margin-bottom: 36px;
       }
-      .stars-container {
-        .star {
-          display: inline-block;
-          width: 38px;
-          height: 38px;
-          background-color: $gray;
-          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        }
-        
-        
-        .star.full {
-          background-color: $yellow;
-        }
-        
-        .star.half {
-          background: linear-gradient(to right, #F8B319 50%, #fff 50%);
-        }
-      }
+
       span {
         font-size: 25px;
         font-weight: 600;
-        margin-bottom: 27px;
+        margin: 27px 0;
       }
       a {
         cursor: pointer;
@@ -283,17 +334,49 @@ main {
         }
       }
       p {
-        margin: 26px 0;
-        font-size: 30px;
+        margin: 32px 0;
+        font-size: 20px;
         max-width: 652px;
         font-weight: 600;
+        line-height: 1.5;
+      }
+      .second-btn {
+        @include button(#f9f9f920, $white);
+      }
+      .primary-btn {
+        @include button($yellow, black);
+        margin-left: 45px;
       }
       }
-  
-  
+    }
+    .image-container {
+      height: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
     }
   }
 }
 
 
 
+
+
+.star {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background-color: $gray;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+
+.star.full {
+  background-color: $yellow;
+}
+
+.star.half {
+  background: linear-gradient(to right, #F8B319 50%, $gray 50%);
+}

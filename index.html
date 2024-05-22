@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Honey Movies index.html</title>
+    <link rel="icon" type="logo" href="./image/logo.svg">
+
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css">
+
 </head>
 <body>
     <header>
@@ -78,16 +83,79 @@
                             <img src="./image/loki.png" alt="loki">
                             <div class="overlay overlay-1"></div>
                             <div class="overlay overlay-2"></div>
+                            <div class="top-info">
+                                <h5>Loki</h5>
+<div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+
+</div>
+                            </div>
+                            <div class="bottom-info">
+                                <div>
+                                    <span id="episodes">6 Ep</span>
+                                    <span id="genre-movie">SuperHero</span>
+                                </div>
+                                <div>
+                                    <button>+</button>
+                                    <button>More Info</button>
+                                </div>
+                            </div>
                         </div> 
                         <div class="movie-image">
                             <img src="./image/chernobyl.png" alt="loki">
                             <div class="overlay overlay-1"></div>
                             <div class="overlay overlay-2"></div>
+                            <div class="top-info">
+                                <h5>Chernobyl</h5>
+<div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+
+</div>
+                            </div>
+                            <div class="bottom-info">
+                                <div>
+                                    <span id="episodes">5 Ep</span>
+                                    <span id="genre-movie">Mini Series</span>
+                                </div>
+                                <div>
+                                    <button>+</button>
+                                    <button>More Info</button>
+                                </div>
+                            </div>
                         </div> 
                         <div class="movie-image">
                             <img src="./image/rick and moerty.png" alt="loki">
                             <div class="overlay overlay-1"></div>
                             <div class="overlay overlay-2"></div>
+                            <div class="top-info">
+                                <h5>Rick and Morty</h5>
+<div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+    <div class="star full"></div>
+
+</div>
+                            </div>
+                            <div class="bottom-info">
+                                <div>
+                                    <span id="episodes">49 Ep</span>
+                                    <span id="genre-movie">Fantasy</span>
+                                </div>
+                                <div>
+                                    <button>+</button>
+                                    <button>More Info</button>
+                                </div>
+                            </div>
                         </div> 
                     </div>
                 </div>
@@ -95,8 +163,22 @@
             
             </div>
         </section>
+
+        <section>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="swiper-wrapper">
+                  <!-- Slides will be dynamically inserted here -->
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </section>
     </main>
 
-    <script src="./main.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./main.js"></script>
 </body>
 </html>
